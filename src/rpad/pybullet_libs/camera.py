@@ -49,7 +49,7 @@ class Render(TypedDict, total=False):
     depth: npt.NDArray[np.float32]
     seg: npt.NDArray[np.uint32]
     P_cam: npt.NDArray[np.float32]
-    P_world: npt.NDArray[np.float32]
+    P_world: npt.NDArray[np.float64]
     P_rgb: npt.NDArray[np.uint8]
     pc_seg: npt.NDArray[np.uint32]
     segmap: Dict[int, Tuple[int, int]]
@@ -171,7 +171,7 @@ class Camera:
             "depth": np.asarray(depth).astype(np.float32),
             "seg": np.asarray(seg).astype(np.uint32),
             "P_cam": np.asarray(P_cam).astype(np.float32),
-            "P_world": np.asarray(P_world).astype(np.float32),
+            "P_world": np.asarray(P_world).astype(np.float64),
             "P_rgb": np.asarray(P_rgb).astype(np.uint8),
             "pc_seg": np.asarray(pc_seg).astype(np.uint32),
         }
